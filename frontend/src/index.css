@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* body {
+  /*color: #2E43FE; */
+}
+ 
+#stripe-container {
+  font-family: sans-serif;
+  border: 2px solid red;
+  background-color: blue;
+}
+
+
+.CardElement {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: blue;
+}
+
+.TestModeNotch {
+  display: none;
+}
+
