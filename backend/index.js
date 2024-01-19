@@ -3,7 +3,6 @@ const stripe = require('stripe')(secret_key)
 const express = require('express');
 const router = express();
 const cors = require("cors");
-// https://github.com/hawans/stripe-payment.git
 
 router.use(cors())
 router.use(express.json()); 
