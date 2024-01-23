@@ -3,9 +3,13 @@ const stripe = require('stripe')(secret_key)
 const express = require('express');
 const router = express();
 const cors = require("cors");
-
+const { loginService } = require('./controller/loginController');
+const userModel = require("./model/loginModel");
+const connectDB = require("./model/connnectDB");
 router.use(cors())
-router.use(express.json()); 
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+
 
 router.post('/create-checkout-session', async (req, res) => {
  try {
@@ -68,6 +72,34 @@ router.get('/user-premium',(req,res) => {
 });
 
 
+router.post('/login-user', async ( req , res ) => {
+  try {
+    const userData = await req.body;
+    loginService(userData,res)
+    // console.log(userData);
+
+    // const newUser = new User({
+    //   email: 'example@email.com',
+    //   phone: '+1234567890',
+    //   password:'@1234'
+    //   // Add other fields as needed
+    // });
+
+    // newUser.save()
+    // .then(savedUser => {
+    //   console.log('User saved successfully:', savedUser);
+    // })
+    // .catch(error => {
+    //   console.error('Error saving user:', error.message);
+    // });
+
+  } catch (error) {
+    console.log(error.message)
+  }
+})
 
 
-router.listen(4242,() =>console.log(`listning on port 4242`))
+
+
+
+router.listen(4242,() => {console.log(`listning on port 4242`); connectDB();})

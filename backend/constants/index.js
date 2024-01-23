@@ -1,4 +1,4 @@
-const url = 'mongodb+srv://rajputdeepak5389:qRR59JmDFT4BFh8t@cluster2.cpo016a.mongodb.net/?retryWrites=true&w=majority'
+const url = 'mongodb+srv://rajputdeepak5389:qRR59JmDFT4BFh8t@cluster2.cpo016a.mongodb.net/test'
 
 const secret_key = "sk_test_51OULNmSDtI8GpdfVLuedRHrwKUWXKfYIR6G9U9QgU68ImM74cjpQEZ0a8uwF5jNknTAFuSx3Lqt3YxdlJUbSoaKQ00ErzYMtoG";
 
